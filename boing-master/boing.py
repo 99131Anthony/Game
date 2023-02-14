@@ -2,6 +2,17 @@ import pgzero, pgzrun, pygame
 import math, sys, random
 from enum import Enum
 
+'''
+I tried to add a second ball spirte to the boing game.
+My attempt was to add collision onto the second ball
+,so when it touched the first ball they would bounce off each other.
+
+
+
+
+'''
+
+
 if sys.version_info < (3,5):
     print("This game requires at least version 3.5 of Python. Please download it from www.python.org")
     sys.exit()
@@ -112,11 +123,11 @@ class Ball2(Actor):
     def __init__(self, dx):
         super().__init__("ball2", (0,0))
 
-        self.x, self.y = HALF_WIDTH, HALF_HEIGHT
+        self.x, self.y = (HALF_WIDTH/2), (HALF_HEIGHT*1.5)
 
         self.dx, self.dy = dx, 0
 
-        self.speed = 5
+        self.speed = 7
 
     def update(self):
         for i in range(self.speed):
